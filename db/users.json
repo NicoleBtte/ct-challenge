@@ -1,0 +1,29 @@
+{
+    "users": [
+        {
+            "email": "aliquet@yahoo.org",
+            "name": "Marvin Richards",
+            "password": "vjp367"
+        },
+        {
+            "email": "adipiscing.lobortis@icloud.edu",
+            "name": "Dahlia Stewart",
+            "password": "pfh682"
+        },
+        {
+            "email": "vitae.velit.egestas@google.com",
+            "name": "Mary Hicks",
+            "password": "sxw162"
+        },
+        {
+            "email": "lacinia@aol.org",
+            "name": "Giselle Berry",
+            "password": "lqd352"
+        },
+        {
+            "email": "lorem.ipsum@hotmail.org",
+            "name": "Scarlet Cox",
+            "password": "dsi745"
+        }
+    ]
+}
