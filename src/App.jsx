@@ -1,17 +1,25 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Route, Routes, BrowserRouter } from 'react-router-dom';
+import LoginPage from './components/loginPage';
+import ReportsPage from './components/reportsPage';
 
 function App() {
 
-  const queryClient = new QueryClient();
-  //const router = createBrowserRouter();
-
   return (
-      <QueryClientProvider client={queryClient}>
-        <div className={'text-lg flex items-center justify-center min-h-screen'}>
-          CityTroops Challenge
-        </div>
-      </QueryClientProvider>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path = "/"
+            element = {<LoginPage/>}
+          />
+          <Route
+            path = "/reports"
+            element = {<ReportsPage/>}
+          />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
