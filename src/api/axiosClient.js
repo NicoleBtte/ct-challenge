@@ -27,8 +27,9 @@ export const login = async(data) => {
 }
 
 export const getMissions = async() => {
-    const res = await axiosClient.get('/groups/own/missions');
-    return res.data;
+    //const res = await axiosClient.get('/groups/own/missions');
+    const res = await axiosClient.get('/unknown');
+    return res.data.data;
 }
 
 export const getReports = async() => {
