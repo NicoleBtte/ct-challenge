@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider, Route, Routes, BrowserRouter } fro
 import LoginPage from './components/loginPage';
 import ReportsPage from './components/reportsPage';
 import { ContextProvider } from './context/contextProvider';
+import SuccessLogin from './components/successLogin';
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
             />
             <Route
               path = "/reports"
-              element = {<ReportsPage/>}
+              element = {<SuccessLogin/>}
             />
           </Routes>
         </BrowserRouter>

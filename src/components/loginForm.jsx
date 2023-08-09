@@ -6,17 +6,19 @@ import { useStateContext } from '../context/contextProvider';
 
 function LoginForm() {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const { setUser , setToken } = useStateContext();
+    const { setUser , setToken, setTribe } = useStateContext();
 
     const onSubmit = async (formData) => {
         console.log(formData)
 
         try{
             const result = await login(formData)
-            console.log("Received data ",result.data)
-            if(result.data.token){
+            console.log("Received data ",result)
+            if(result.jwtToken){
                 console.log("Successfull", result)
-                setToken(result.data.token)
+                setToken(result.jwtToken)
+                setUser(result.userId)
+                setTribe(result.tribeId)
             }
 
         } catch(error){

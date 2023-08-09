@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-   //baseURL: 'https://api.cityhero.es.'
-   baseURL: 'https://reqres.in/api'
+   baseURL: 'https://api.cityhero.es'
+   //baseURL: 'https://reqres.in/api'
 });
 
 axiosClient.interceptors.request.use((config) => {
@@ -21,9 +21,9 @@ export const login = async(data) => {
         "email": data.email,
         "password": data.password
     }
-    const res = await axiosClient.post('/login', payload)
-    //return res.data;
-    return res;
+    const res = await axiosClient.post('/auth/login', payload)
+
+    return res.data;
 }
 
 export const getMissions = async() => {

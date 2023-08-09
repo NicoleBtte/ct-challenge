@@ -10,12 +10,12 @@ const StateContext = createContext({
 })
 
 export const ContextProvider = ({children}) => {
-    const [user, _setUser] = useState({});
-    const [token, _setToken] = useState('');
-    //const [token, _setToken] = useState(localStorage.getItem('TOKEN'));
-    const [tribe, _setTribe] = useState({});
+    const [user, _setUser] = useState(localStorage.getItem('USER_ID'));
+    const [token, _setToken] = useState(localStorage.getItem('TOKEN'));
+    const [tribe, _setTribe] = useState(localStorage.getItem('TRIBE_ID'));
 
     const setUser = (id) => {
+        console.log("Se ejecuto setuser")
         _setUser(id);
         if(id){
             localStorage.setItem('USER_ID', id);
