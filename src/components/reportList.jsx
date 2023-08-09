@@ -1,9 +1,9 @@
 import React from 'react'
 import { useQuery } from 'react-query'
-import { getReports } from '../api/axiosClient'
+import { getReports, getReportsByMission } from '../api/axiosClient'
 
-const ReportList = ({ missionId }) => {
-    const {data: reports, isLoading } = useQuery('allReports', getReports)
+const ReportList = ({ missionId = '2' }) => {
+    const {data: reports, isLoading } = useQuery('reports', () => getReportsByMission(missionId))
 
     if(isLoading){
         return <p> Loading reports... </p>
@@ -12,11 +12,8 @@ const ReportList = ({ missionId }) => {
   return (
     <div>
         <h2>Reports</h2>
-        <ul>
-            {reports.map((report) => (
-                <p key={report.id}> {report.name} </p>
-            ))}
-        </ul>
+        <p>{ reports.name }</p>
+        <p>{ reports.year }</p>
     </div>
   )
 }

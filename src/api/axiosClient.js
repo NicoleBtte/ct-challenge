@@ -37,3 +37,9 @@ export const getReports = async() => {
     const res = await axiosClient.get('/unknown');
     return res.data.data;
 }
+
+export const getReportsByMission = async(idMission) => {
+    //const res = await axiosClient.get('/groups/own/missions');
+    const res = await axiosClient.get('/unknown/2');
+    return res.data.data;
+}
