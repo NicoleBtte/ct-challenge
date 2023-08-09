@@ -2,6 +2,7 @@ import React from 'react'
 import { Navigate } from 'react-router-dom'
 import { useStateContext } from '../context/contextProvider'
 import MissionSelector from './missionSelector'
+import ReportList from './reportList'
 
 const ReportsPage = () => {
   const { token } =  useStateContext();
@@ -14,6 +15,7 @@ const ReportsPage = () => {
     <>
       <div>ReportsPage</div>
       <MissionSelector></MissionSelector>
+      <ReportList></ReportList>
     </>
 
   )
