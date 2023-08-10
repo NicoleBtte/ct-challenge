@@ -16,8 +16,7 @@ const ReportList = ({ missionId }) => {
     const reportToDisplay = missionId? missionReports : allReports;
 
   return (
-    <div>
-        <h2>Reports</h2>
+    <div className="justify-center mt-8 items-center flex flex-col">
         { reportToDisplay && reportToDisplay.map((report) => (
           <ReportBox
             creator={report.creator}

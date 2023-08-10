@@ -23,11 +23,13 @@ const ReportsPage = () => {
   }
 
   return (
-    <>
-      <div>ReportsPage</div>
+    <div className="p-8">
+      <div className="w-full h-3/5 bg-cyan-900">
+        <h2>Panel de reportes</h2>
+      </div>
       <MissionSelector onSelectedMission={handleSelectedMission}></MissionSelector>
       <ReportList missionId={selectedMission}></ReportList>
-    </>
+    </div>
 
   )
 }
