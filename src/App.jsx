@@ -8,20 +8,23 @@ import SuccessLogin from './components/successLogin';
 function App() {
 
   return (
-    <ContextProvider>
-      <BrowserRouter>
-          <Routes>
-            <Route
-              path = "/"
-              element = {<LoginPage/>}
-            />
-            <Route
-              path = "/reports"
-              element = {<ReportsPage/>}
-            />
-          </Routes>
-        </BrowserRouter>
-    </ContextProvider>
+    <div className="bg-gradient-to-tr from-cyan-500 to-cyan-100 p-20 w-full h-screen font-sans">
+      <ContextProvider>
+        <BrowserRouter>
+            <Routes>
+              <Route
+                path = "/"
+                element = {<LoginPage/>}
+              />
+              <Route
+                path = "/reports"
+                element = {<ReportsPage/>}
+              />
+            </Routes>
+          </BrowserRouter>
+      </ContextProvider>
+    </div>
+
  
   );
 }
