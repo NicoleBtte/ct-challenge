@@ -7,7 +7,7 @@ import { useQueryClient } from 'react-query'
 
 const ReportsPage = () => {
   const [selectedMission, setSelectedMission] = useState('')
-  const { token } =  useStateContext();
+  const { token , setToken, setTribe, setUser} =  useStateContext();
   const queryClient = useQueryClient();
   console.log(selectedMission)
 
@@ -22,10 +22,20 @@ const ReportsPage = () => {
     }
   }
 
+  const handleLogout = () => {
+    localStorage.removeItem('TOKEN');
+    localStorage.removeItem('USER_ID');
+    localStorage.removeItem('TRIBE_ID');
+    setToken(null);
+    setTribe(null);
+    setUser(null);
+  }
+
   return (
     <div className="p-8">
-      <div className="w-full bg-cyan-900 p-5" >
+      <div className="w-full bg-cyan-900 p-5  flex items-center justify-between" >
         <h2 className="text-white text-5xl">Panel de reportes</h2>
+        <button className="bg-neutral-200 p-3 rounded-lg opacity-40" onClick={handleLogout}>Cerrar sesión</button>
       </div>
       <MissionSelector onSelectedMission={handleSelectedMission}></MissionSelector>
       <ReportList missionId={selectedMission}></ReportList>
