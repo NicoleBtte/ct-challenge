@@ -17,7 +17,7 @@ function App() {
             />
             <Route
               path = "/reports"
-              element = {<SuccessLogin/>}
+              element = {<ReportsPage/>}
             />
           </Routes>
         </BrowserRouter>
