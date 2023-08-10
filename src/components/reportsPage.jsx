@@ -24,8 +24,8 @@ const ReportsPage = () => {
 
   return (
     <div className="p-8">
-      <div className="w-full h-3/5 bg-cyan-900">
-        <h2>Panel de reportes</h2>
+      <div className="w-full bg-cyan-900 p-5" >
+        <h2 className="text-white text-5xl">Panel de reportes</h2>
       </div>
       <MissionSelector onSelectedMission={handleSelectedMission}></MissionSelector>
       <ReportList missionId={selectedMission}></ReportList>
