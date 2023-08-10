@@ -3,19 +3,22 @@ import { useQuery } from 'react-query'
 import { getReports, getReportsByMission } from '../api/axiosClient'
 import ReportBox from './reportBox'
 
-const ReportList = ({ missionId = '2' }) => {
-    //const {data: reports, isLoading } = useQuery('reports', () => getReportsByMission(missionId))
-    const { data: reports, isLoading } = useQuery('reports', getReports)
-    console.log("R", reports)
+const ReportList = ({ missionId }) => {
+    const {data: missionReports, isLoading: isLoadingMissionReports } = useQuery(['reports', missionId], () => getReportsByMission(missionId), {
+      enabled: !!missionId,
+    })
+    const { data: allReports, isLoading: isLoadingAllReports } = useQuery('reports', getReports)
 
-    if(isLoading){
+    if(isLoadingAllReports || isLoadingMissionReports){
         return <p> Loading reports... </p>
     }
+
+    const reportToDisplay = missionId? missionReports : allReports;
 
   return (
     <div>
         <h2>Reports</h2>
-        { reports && reports.map((report) => (
+        { reportToDisplay && reportToDisplay.map((report) => (
           <ReportBox
             creator={report.creator}
             creationDate={report.created}

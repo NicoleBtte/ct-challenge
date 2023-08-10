@@ -4,7 +4,6 @@ import { getMissions } from '../api/axiosClient'
 
 function MissionSelector({ onSelectedMission }) {
     const { data: missions, isLoading} = useQuery('missions', getMissions)
-    console.log("M", missions)
 
     if(isLoading){
         return <p> Loading missions... </p>
