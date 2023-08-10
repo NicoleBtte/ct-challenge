@@ -8,7 +8,7 @@ import SuccessLogin from './components/successLogin';
 function App() {
 
   return (
-    <div className="bg-gradient-to-tr from-cyan-500 to-cyan-100 w-full h-screen font-sans">
+    <div className="bg-gradient-to-tr from-cyan-500 to-cyan-100 w-full h-full font-sans">
       <ContextProvider>
         <BrowserRouter>
             <Routes>

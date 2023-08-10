@@ -15,7 +15,6 @@ export const ContextProvider = ({children}) => {
     const [tribe, _setTribe] = useState(localStorage.getItem('TRIBE_ID'));
 
     const setUser = (id) => {
-        console.log("Se ejecuto setuser")
         _setUser(id);
         if(id){
             localStorage.setItem('USER_ID', id);
